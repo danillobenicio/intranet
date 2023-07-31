@@ -38,28 +38,28 @@
                     <div class="card-header">
                         <h3 class="card-title">Cadastrar Contato</h3>
                     </div>
-                    <form method="post" action="contato.php">
+                    <form id="formCad" method="post" action="contato.php" onsubmit="return ValidarCampos('formCad')">
                         <div class="card-body">
                             <div class="row">
                                 <div class="form-group col-md-5">
                                     <label>Nome</label>
-                                    <input type="text" class="form-control" placeholder="Nome" name="nome">
+                                    <input type="text" class="form-control obg" placeholder="Nome" name="nome" id="nome">
                                 </div>
                                 <div class="form-group col-md-5">
                                     <label>E-mail</label>
-                                    <input type="email" class="form-control" placeholder="E-mail" name="email">
+                                    <input type="email" class="form-control obg" placeholder="E-mail" name="email" id="email">
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label>Ramal</label>
-                                    <input type="number" class="form-control" placeholder="Ramal" name="ramal">
+                                    <input type="number" class="form-control obg" placeholder="Ramal" name="ramal" id=ramal>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Setor</label>
-                                        <select class="form-control" name="setor">
-                                            <option>option 1</option>
+                                        <select class="form-control obg" name="setor" id="setor">
+                                            <option value="">Selecione</option>
                                             <option>option 2</option>
                                             <option>option 3</option>
                                             <option>option 4</option>
@@ -70,8 +70,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Local</label>
-                                        <select class="form-control" name="local">
-                                            <option>option 1</option>
+                                        <select class="form-control obg" name="local" id="local">
+                                            <option value="">Selecione</option>
                                             <option>option 2</option>
                                             <option>option 3</option>
                                             <option>option 4</option>

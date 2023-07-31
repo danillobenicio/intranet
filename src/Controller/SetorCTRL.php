@@ -3,19 +3,20 @@
     namespace Src\Controller;
 
     use Src\VO\SetorVO;
+    use Src\Model\SetorMODEL;
 
     class SetorCTRL
     {
-
-        public function CadastrarSetor(SetorVO $vo) :  int
+        public function CadastrarSetorCTRL(SetorVO $vo) : int
         {
             if(empty($vo->getSetor()))
-            {
                 return 0;
-            }
-            return 1;
-        }
+            
+            $model = new SetorModel();
+            $ret = $model->CadastrarSetorMODEL($vo);
 
+            return $ret;
+        }
     }
 
 ?>

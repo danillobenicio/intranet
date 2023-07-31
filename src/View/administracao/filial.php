@@ -38,16 +38,16 @@
                     <div class="card-header">
                         <h3 class="card-title">Cadastrar Filial</h3>
                     </div>
-                    <form method="post" action="filial.php">
+                    <form id="formCad" method="post" action="filial.php" onsubmit="return ValidarCampos('formCad')">
                         <div class="card-body">
                             <div class="row">
                                 <div class="form-group col-md-9">
                                     <label>Nome</label>
-                                    <input type="text" class="form-control" placeholder="Nome Filial" name="filial">
+                                    <input type="text" class="form-control obg" placeholder="Nome Filial" name="filial" id="filial">
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label>Código Atak</label>
-                                    <input type="number" class="form-control" placeholder="Código Atak" name="cod_atak">
+                                    <input type="number" class="form-control obg" placeholder="Código Atak" name="cod_atak" id="cod_atak">
                                 </div>
                             </div>
                         </div>
@@ -66,12 +66,10 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-
                                         <div class="card-tools">
                                             <div class="input-group input-group-sm" style="width: 150px;">
                                                 <input type="text" name="table_search" class="form-control float-right"
                                                     placeholder="Pesquisar">
-
                                                 <div class="input-group-append">
                                                     <button type="submit" class="btn btn-default">
                                                         <i class="fas fa-search"></i>
@@ -99,19 +97,15 @@
                                             </tbody>
                                         </table>
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
-
             </section>
         </div>
         <?php
-            include_once PATH . 'Template/_includes/_footer.php';
-            
+            include_once PATH . 'Template/_includes/_footer.php';     
         ?>
     </div>
 

@@ -7,14 +7,12 @@
 
     if(isset($_POST['btnCadastrar']))
     {
-
         $vo = new SetorVO();
         $ctrl = new SetorCTRL();
 
         $vo->setSetor($_POST['setor']);
 
-        $ret = $ctrl->CadastrarSetor($vo);
-
+        $ret = $ctrl->CadastrarSetorCTRL($vo);
     }
 
 ?>

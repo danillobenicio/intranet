@@ -3,6 +3,7 @@
     namespace Src\Controller;
 
     use Src\VO\FilialVO;
+    use Src\Model\FilialMODEL;
 
     class FilialCTRL
     {
@@ -11,7 +12,12 @@
         {
             if(empty($vo->getFilial()) or empty($vo->getCod()))
                 return 0;
-            return 1;
+            
+            $model = new FilialMODEL();
+
+            $ret = $model->CadastrarFilialMODEL($vo);
+
+            return $ret;
         }
 
     }

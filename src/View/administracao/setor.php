@@ -38,12 +38,12 @@
                     <div class="card-header">
                         <h3 class="card-title">Cadastrar Setor</h3>
                     </div>
-                    <form method="post" action="setor.php">
+                    <form id="formCad" method="post" action="setor.php" onsubmit="return ValidarCampos('formCad')">
                         <div class="card-body">
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label>Nome</label>
-                                    <input type="text" class="form-control" placeholder="Nome Setor" name="setor">
+                                    <input type="text" class="form-control obg" placeholder="Nome Setor" name="setor" id="setor">
                                 </div>
                             </div>
                         </div>
