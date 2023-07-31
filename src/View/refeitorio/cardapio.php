@@ -1,6 +1,6 @@
 <?php
     
-    include_once dirname(__DIR__, 2) . '/Resource/dataview/filial_dv.php';
+    include_once dirname(__DIR__, 2) . '/Resource/dataview/cardapio_dv.php';
 
 ?>
 
@@ -50,10 +50,10 @@
                                     <label>Filial</label>
                                     <select class="form-control obg" name="filial" id="filial">
                                         <option value="">Selecione</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
+                                        <option value="1">option 2</option>
+                                        <option value="2">option 3</option>
+                                        <option value="3">option 4</option>
+                                        <option value="4">option 5</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
@@ -63,7 +63,7 @@
                             </div>
 
                             <div id="itensDiv" style="display: none;">
-                            <h5>Itens do Cardápio</h5>                           
+                                <h5>Itens do Cardápio</h5>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6 col-lg-6">
                                         <div class="input-group">
@@ -90,25 +90,36 @@
                                 </div>
                                 <br>
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="col-sm-12 col-md-4 col-lg-4">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    <i class="fa-solid fa-utensils"></i>&ensp;Salada
+                                                </span>
+                                            </div>
+                                            <input type="text" class="form-control obg" name="salada"
+                                                placeholder="Ex. Alface, tomate...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4 col-lg-4">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">
                                                     <i class="fa-solid fa-utensils"></i>&ensp;Bebida
                                                 </span>
                                             </div>
-                                            <input type="text" class="form-control obg" name="prato_principal"
+                                            <input type="text" class="form-control obg" name="bebida"
                                                 placeholder="Ex. Suco de laranja...">
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="col-sm-12 col-md-4 col-lg-4">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">
                                                     <i class="fa-solid fa-utensils"></i>&ensp;Sobremesa
                                                 </span>
                                             </div>
-                                            <input type="text" class="form-control obg" name="mistura"
+                                            <input type="text" class="form-control obg" name="sobremesa"
                                                 placeholder="Ex. Fruta, doce...">
                                         </div>
                                     </div>
@@ -179,9 +190,7 @@
          include_once PATH . 'Template/_includes/_msg.php';
     ?>
     <script>
-
-            HabilitaItensCardapio();
-        
+        HabilitaItensCardapio();
     </script>
 
 </body>

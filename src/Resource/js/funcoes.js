@@ -45,8 +45,9 @@ function HabilitaItensCardapio()
             if(dataSelecionada <= dataLimite) 
             {
                 itensDiv.style.display = "block";
-            }else
+            }elseif
             {
+                MostrarMensagem(2);
                 itens.style.display = "none";
             }
 

@@ -11,5 +11,8 @@ function MostrarMensagem(ret)
         case 1:
             toastr.success('Cadastrado com sucesso!');
             break;
+        case 2:
+            toastr.warning('Data não permitida!');
+            break;
     }
 }
