@@ -79,18 +79,19 @@
                                     <!-- /.card-header -->
                                     <div class="card-body table-responsive p-0">
                                         <table class="table table-hover text-nowrap">
-                                            <thead>
+                                            <thead>                                                
                                                 <tr>
                                                     <th>Setor</th>
                                                     <th>Ação</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>183</td>
+                                                <?php for($i = 0; $i < count($setores); $i++) { ?>
+                                                <tr>                                                   
+                                                    <td><?=$setores[$i]['setor']?></td>
                                                     <td><i class="fa-solid fa-pen-to-square">&emsp;<i
                                                                 class="fa-solid fa-trash"></i></i></td>
                                                 </tr>
+                                                <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>

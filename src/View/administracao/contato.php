@@ -60,10 +60,9 @@
                                         <label>Setor</label>
                                         <select class="form-control obg" name="setor" id="setor">
                                             <option value="">Selecione</option>
-                                            <option>option 2</option>
-                                            <option>option 3</option>
-                                            <option>option 4</option>
-                                            <option>option 5</option>
+                                            <?php for($i = 0; $i < count($setores); $i++) { ?>
+                                                <option value="<?=$setores[$i]['id']?>"><?=$setores[$i]['setor']?></option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -72,10 +71,9 @@
                                         <label>Local</label>
                                         <select class="form-control obg" name="local" id="local">
                                             <option value="">Selecione</option>
-                                            <option>option 2</option>
-                                            <option>option 3</option>
-                                            <option>option 4</option>
-                                            <option>option 5</option>
+                                            <?php for($i = 0; $i < count($filiais); $i++) { ?>
+                                                <option value="<?=$filiais[$i]['id']?>"><?=$filiais[$i]['filial']?></option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -124,15 +122,17 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <?php for($i = 0; $i < count($contatos); $i++) { ?>
                                                 <tr>
-                                                    <td>183</td>
-                                                    <td>John Doe</td>
-                                                    <td>183</td>
-                                                    <td>John Doe</td>
-                                                    <td>183</td>
+                                                    <td><?=$contatos[$i]['nome']?></td>
+                                                    <td><?=$contatos[$i]['email']?></td>
+                                                    <td><?=$contatos[$i]['ramal']?></td>
+                                                    <td><?=$contatos[$i]['setor']?></td>
+                                                    <td><?=$contatos[$i]['filial']?></td>
                                                     <td><i class="fa-solid fa-pen-to-square">&emsp;<i
                                                                 class="fa-solid fa-trash"></i></i></td>
                                                 </tr>
+                                                <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>

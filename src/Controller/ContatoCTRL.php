@@ -3,17 +3,31 @@
     namespace Src\Controller;
 
     use Src\VO\ContatoVO;
+    use Src\Model\ContatoMODEL;
 
     class ContatoCTRL
     {
 
+        private $model;
+        
+        public function __construct()
+        {
+            $this->model = new ContatoMODEL();
+        }
+
         public function CadastrarContato(ContatoVO $vo)
         {
             if(empty($vo->getNome()) || empty($vo->getEmail()) || empty($vo->getRamal()) || empty($vo->getSetor()) || empty($vo->getLocal()))
-            {
                 return 0;
-            }
-            return 1;
+
+            $ret = $this->model->CadastrarContatoMODEL($vo);
+            return $ret;
+            
+        }
+
+        public function ConsultarContatoCTRL()
+        {
+            return $this->model->ConsultarContatoMODEL();
         }
 
     }

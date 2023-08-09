@@ -2,9 +2,6 @@
 
 namespace Src\Model;
 
-use PDO;
-use PDOException;
-
 // Configurações do site
 define('HOST', 'localhost'); //IP
 define('USER', 'root'); //usuario
@@ -28,14 +25,14 @@ class Conexao {
             if (self::$Connect == null):
 
                 $dsn = 'mysql:host=' . HOST . ';dbname=' . DB;
-                self::$Connect = new PDO($dsn, USER, PASS, null);
+                self::$Connect = new \PDO($dsn, USER, PASS, null);
             endif;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo $e->getMessage();
         }
        
         //Seta os atributos para que seja retornado as excessões do banco
-        self::$Connect->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        self::$Connect->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
        
         return  self::$Connect;
     }

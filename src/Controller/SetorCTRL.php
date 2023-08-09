@@ -1,4 +1,5 @@
 <?php
+    
 
     namespace Src\Controller;
 
@@ -7,16 +8,31 @@
 
     class SetorCTRL
     {
+
+        private $model;
+
+        public function __construct()
+        {
+            $this->model = new SetorMODEL();
+        }
+
+
         public function CadastrarSetorCTRL(SetorVO $vo) : int
         {
             if(empty($vo->getSetor()))
-                return 0;
-            
-            $model = new SetorModel();
-            $ret = $model->CadastrarSetorMODEL($vo);
+                return 0;       
 
+            $ret = $this->model->CadastrarSetorMODEL($vo);
             return $ret;
         }
+
+        public function ConsultarSetorCTRL()
+        {
+            return $this->model->ConsultarSetorMODEL();  
+        }
     }
+
+
+
 
 ?>

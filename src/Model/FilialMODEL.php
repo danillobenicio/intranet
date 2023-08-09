@@ -8,10 +8,18 @@
 
     class FilialMODEL extends Conexao
     {
+
+        private $conexao;
+
+        public function __construct()
+        {
+            $this->conexao = parent::retornarConexao();
+        }
+
+
         public function CadastrarFilialMODEL(FilialVO $vo)
         {
-            $conexao = parent::retornarConexao();
-            $sql = $conexao->prepare(FILIAL_SQL::INSERIR_FILIAL());
+            $sql = $this->conexao->prepare(FILIAL_SQL::INSERIR_FILIAL());
             $sql->bindValue(1, $vo->getFilial());
             $sql->bindValue(2, $vo->getCod());
 
@@ -20,11 +28,19 @@
                 $sql->execute();
                 return 1;
             }
-            catch (Exception $ex)
+            catch (\Exception $ex)
             {
                 return -1;
             }
         }
+
+        public function ConsultarFilialMODEL()
+        {
+            $sql = $this->conexao->prepare(FILIAL_SQL::CONSULTAR_FILIAL());
+            $sql->execute();
+            return $sql->fetchALL(\PDO::FETCH_ASSOC);
+        }
+
     }
 
 ?>

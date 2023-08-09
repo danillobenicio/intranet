@@ -89,11 +89,13 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <?php for($i = 0; $i < count($filiais); $i++) { ?>
                                                 <tr>
-                                                    <td>183</td>
-                                                    <td>John Doe</td>
+                                                    <td><?=$filiais[$i]['filial']?></td>
+                                                    <td><?=$filiais[$i]['codigo_atak']?></td>
                                                     <td><i class="fa-solid fa-pen-to-square">&emsp;<i class="fa-solid fa-trash"></i></i></td>
                                                 </tr>
+                                                <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>
