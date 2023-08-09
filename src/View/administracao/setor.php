@@ -88,26 +88,25 @@
                                                 <?php for($i = 0; $i < count($setores); $i++) { ?>
                                                 <tr>                                                   
                                                     <td><?=$setores[$i]['setor']?></td>
-                                                    <td><i class="fa-solid fa-pen-to-square">&emsp;<i
-                                                                class="fa-solid fa-trash"></i></i></td>
+                                                    <td><i data-toggle="modal" data-target="#alterar_setor" class="fa-solid fa-pen-to-square" onclick="CarregarSetor('<?=$setores[$i]['id']?>', '<?=$setores[$i]['setor']?>')"></i>&emsp;<i class="fa-solid fa-trash"></i></td>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>
-
-                                </div>
-
+                                </div>                             
                             </div>
                         </div>
                     </div>
                 </div>
-
             </section>
         </div>
+        <form method="post" action="setor.php" id="formAlt">                                  
+            <?php include_once 'modais/modal_alterar_setor.php'; ?>
+        </form>
+
         <?php
-            include_once PATH . 'Template/_includes/_footer.php';
-            
+            include_once PATH . 'Template/_includes/_footer.php';         
         ?>
     </div>
 

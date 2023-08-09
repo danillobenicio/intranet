@@ -26,9 +26,23 @@
             return $ret;
         }
 
+        
         public function ConsultarSetorCTRL()
         {
             return $this->model->ConsultarSetorMODEL();  
+        }
+
+
+        public function AlterarSetorCTRL(SetorVO $vo)
+        {
+            if(empty($vo->getSetor()) || empty($vo->getId()))
+                return 0;
+            
+            $ret = $this->model->AlterarSetorMODEL($vo);
+
+            return $ret;
+            
+            
         }
     }
 
