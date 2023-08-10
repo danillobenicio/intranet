@@ -129,16 +129,16 @@
                                                     <td><?=$contatos[$i]['ramal']?></td>
                                                     <td><?=$contatos[$i]['setor']?></td>
                                                     <td><?=$contatos[$i]['filial']?></td>
-                                                    <td><i class="fa-solid fa-pen-to-square">&emsp;<i
-                                                                class="fa-solid fa-trash"></i></i></td>
+                                                    <td>
+                                                        <i class="fa-solid fa-pen-to-square" data-toggle="modal" data-target="#alterar_contato" onclick="CarregarContato('<?=$contatos[$i]['id']?>', '<?=$contatos[$i]['nome']?>', '<?=$contatos[$i]['email']?>', '<?=$contatos[$i]['ramal']?>', '<?=$contatos[$i]['id_setor']?>', '<?=$contatos[$i]['id_filial']?>')"></i>&emsp;
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </td>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -146,6 +146,9 @@
 
             </section>
         </div>
+        <form method="post" action="contato.php" id="formAlt">
+            <?php include_once 'modais/modal_alterar_contato.php'; ?>
+        </form>
         <?php
             include_once PATH . 'Template/_includes/_footer.php';
             

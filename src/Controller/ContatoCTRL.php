@@ -30,6 +30,15 @@
             return $this->model->ConsultarContatoMODEL();
         }
 
+
+        public function AlterarContatoCTRL(ContatoVO $vo)
+        {
+            if(empty($vo->getNome()) || empty($vo->getEmail()) || empty($vo->getRamal()) || empty($vo->getSetor()) || empty($vo->getLocal()) || empty($vo->getId()))
+                return 0;
+            $ret = $this->model->AlterarContatoMODEL($vo);
+            return $ret;
+        }
+
     }
 
 

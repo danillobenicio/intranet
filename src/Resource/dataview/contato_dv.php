@@ -25,6 +25,17 @@
 
         $ret = $ctrl->CadastrarContato($vo);
     }
+    else if(isset($_POST['btnAlterar']))
+    {
+        $vo->setNome($_POST['nome_alterar']);
+        $vo->setEmail($_POST['email_alterar']);
+        $vo->setRamal((int)$_POST['ramal_alterar']);
+        $vo->setSetor((int)$_POST['setor_alterar']);
+        $vo->setLocal((int)$_POST['local_alterar']);
+        $vo->setId((int)$_POST['id_alterar']);
+
+        $ret = $ctrl->AlterarContatoCTRL($vo);
+    }
 
     $contatos = $ctrl->ConsultarContatoCTRL();
 

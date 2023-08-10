@@ -41,6 +41,28 @@
             $sql->execute();
             return $sql->fetchAll(\PDO::FETCH_ASSOC);
         }
+
+        public function AlterarContatoMODEL(ContatoVO $vo)
+        {
+            $sql = $this->conexao->prepare(CONTATO_SQL::ALTERAR_CONTATO());
+
+            $i = 1;
+            $sql->bindValue($i++, $vo->getNome());
+            $sql->bindValue($i++, $vo->getEmail());
+            $sql->bindValue($i++, $vo->getRamal());
+            $sql->bindValue($i++, $vo->getSetor());
+            $sql->bindValue($i++, $vo->getLocal());          
+            $sql->bindValue($i++, $vo->getId());
+
+            try {
+                $sql->execute();
+                return 3;
+            } catch (\Exception $ex) {
+                echo $ex->getMessage();
+                return -1;
+            }
+
+        }
     }
 
 ?>
