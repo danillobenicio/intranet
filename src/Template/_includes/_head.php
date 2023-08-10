@@ -10,5 +10,7 @@
   <!--<link rel="stylesheet" href="../../Template/plugins/fontawesome-free/css/all.min.css">-->
   <!-- Theme style -->
   <link rel="stylesheet" href="../../Template/dist/css/adminlte.min.css">
+  <!-- My Style -->
+  <link rel="stylesheet" href="../../Template/dist/css/mystyle.css">
   <!-- Toastr -->
   <link rel="stylesheet" href="../../Template/plugins/toastr/toastr.min.css">
