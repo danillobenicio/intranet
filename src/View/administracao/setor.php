@@ -94,14 +94,14 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>                             
+                                </div>              
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-        <form method="post" action="setor.php" id="formAlt">                                  
+        <form method="post" action="setor.php" id="formAlt">                            
             <?php include_once 'modais/modal_alterar_setor.php'; ?>
         </form>
 

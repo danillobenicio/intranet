@@ -14,5 +14,8 @@ function MostrarMensagem(ret)
         case 2:
             toastr.warning('Data não permitida!');
             break;
+        case 3:
+            toastr.success('Alterado com sucesso!');
+            break;
     }
 }

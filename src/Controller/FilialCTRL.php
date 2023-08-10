@@ -33,6 +33,16 @@
             return $this->model->ConsultarFilialMODEL();
         }
 
+
+        public function AlterarFilialCTRL(FilialVO $vo)
+        {
+            if(empty($vo->getFilial()) || empty($vo->getCod()) || empty($vo->getId()))
+                return 0;
+
+            $ret = $this->model->AlterarFilialMODEL($vo);
+            return $ret;
+        }
+
     }
 
 ?>

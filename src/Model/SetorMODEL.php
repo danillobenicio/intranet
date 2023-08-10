@@ -52,7 +52,7 @@
             try
             {
                $sql->execute();
-               return 1;
+               return 3;
             }
             catch(\Exception $ex)
             {

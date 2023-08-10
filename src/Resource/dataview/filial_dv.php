@@ -16,6 +16,14 @@
         $ret = $ctrl->CadastrarFilialCTRL($vo);
         
     }
+    else if(isset($_POST['btnAlterar']))
+    {
+        $vo->setFilial($_POST['filial_alterar']);
+        $vo->setCod($_POST['cod_atak_alterar']);
+        $vo->setId($_POST['id_alterar']);
+
+        $ret = $ctrl->AlterarFilialCTRL($vo);
+    }
 
     $filiais = $ctrl->ConsultarFilialCTRL();
 

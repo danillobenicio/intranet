@@ -15,6 +15,12 @@
             $sql = 'SELECT id, filial, codigo_atak FROM tb_filial ORDER BY filial';
             return $sql;
         }
+
+        public static function ALTERAR_FILIAL()
+        {
+            $sql = 'UPDATE tb_filial SET filial = ?, codigo_atak = ? WHERE  id = ?';
+            return $sql;
+        }
     }
 
 ?>

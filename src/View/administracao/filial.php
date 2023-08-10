@@ -93,7 +93,8 @@
                                                 <tr>
                                                     <td><?=$filiais[$i]['filial']?></td>
                                                     <td><?=$filiais[$i]['codigo_atak']?></td>
-                                                    <td><i class="fa-solid fa-pen-to-square">&emsp;<i class="fa-solid fa-trash"></i></i></td>
+                                                    <td><i class="fa-solid fa-pen-to-square" data-toggle="modal" data-target="#alterar_filial" onclick="CarregarFilial('<?=$filiais[$i]['id']?>', '<?=$filiais[$i]['filial']?>', '<?=$filiais[$i]['codigo_atak']?>')"></i>&emsp;
+                                                    <i class="fa-solid fa-trash"></i></td>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>
@@ -106,6 +107,9 @@
                 </div>
             </section>
         </div>
+        <form method="post" action="filial.php" id="formAlt">
+            <?php include_once 'modais/modal_alterar_filial.php' ?>
+        </form>
         <?php
             include_once PATH . 'Template/_includes/_footer.php';     
         ?>
